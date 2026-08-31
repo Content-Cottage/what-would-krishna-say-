@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#0A0F1E;}
+  ::selection{background:#00A3FF;color:#0A0F1E;}
+  a{color:#22D3EE;text-decoration:none;}
+  a:hover{color:#00A3FF;}
+  @keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  *{box-sizing:border-box;}
+</style>
+</helmet>
+
+<div style="font-family:'Poppins',sans-serif;background:#0A0F1E;color:#F8FAFC;min-height:100vh;overflow-x:hidden;padding-bottom:{{ bottomPad }}px;">
+
+  <!-- NAV -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(10,15,30,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,0.15);">
+    <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-weight:700;font-size:15px;letter-spacing:0.08em;color:#F8FAFC;">CONTENT COTTAGE</div>
+      <a href="{{ payuUrl }}" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:13px;letter-spacing:0.03em;color:#0A0F1E;background:linear-gradient(90deg,#00A3FF,#9333EA);padding:10px 20px;border-radius:3px;white-space:nowrap;">{{ ctaText }}</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section data-screen-label="Hero" style="max-width:1180px;margin:0 auto;padding:clamp(48px,8vw,96px) 24px clamp(56px,9vw,110px);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(32px,6vw,64px);align-items:center;">
+    <div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;color:#00A3FF;margin-bottom:18px;">18 CONVERSATIONS FROM THE BHAGAVAD GITA</div>
+      <h1 style="font-size:clamp(40px,6.5vw,68px);line-height:1.02;font-weight:700;margin:0 0 20px;background:linear-gradient(100deg,#F8FAFC 20%,#00A3FF 55%,#9333EA 90%);-webkit-background-clip:text;background-clip:text;color:transparent;">WHAT WOULD<br>KRISHNA SAY?</h1>
+      <p style="font-size:clamp(17px,2.2vw,21px);font-weight:300;color:#94A3B8;line-height:1.55;margin:0 0 24px;max-width:520px;text-wrap:pretty;">Ancient wisdom for the questions modern life keeps asking you.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;">
+        <sc-for list="{{ heroThemes }}" as="theme" hint-placeholder-count="5">
+          <span style="font-size:13px;font-weight:500;color:#F8FAFC;background:rgba(148,163,184,0.08);border:1px solid rgba(148,163,184,0.2);border-radius:3px;padding:7px 14px;">{{ theme }}</span>
+        </sc-for>
+      </div>
+      <p style="font-size:15px;font-weight:300;color:#94A3B8;line-height:1.6;margin:0 0 32px;max-width:500px;">A 217-page digital ebook of 18 conversations that bring the Bhagavad Gita's teachings into conversation with contemporary questions &mdash; fear, comparison, purpose, heartbreak, and the search for a little clarity.</p>
+
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+        <div style="display:flex;align-items:baseline;gap:10px;">
+          <span style="font-size:16px;color:#94A3B8;text-decoration:line-through;">&#8377;399</span>
+          <span style="font-size:32px;font-weight:700;color:#C9A84C;">&#8377;199</span>
+        </div>
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#9333EA;background:rgba(147,51,234,0.12);border:1px solid rgba(147,51,234,0.3);border-radius:3px;padding:6px 12px;">{{ offerLabel }}</span>
+      </div>
+
+      <a href="{{ payuUrl }}" style="display:inline-block;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#0A0F1E;background:linear-gradient(90deg,#00A3FF,#9333EA);padding:18px 36px;border-radius:4px;box-shadow:0 12px 32px rgba(0,163,255,0.25);" style-hover="box-shadow:0 16px 40px rgba(147,51,234,0.35);transform:translateY(-1px);">{{ ctaText }}</a>
+      <div style="font-size:12px;font-weight:500;letter-spacing:0.06em;color:#94A3B8;margin-top:14px;">217-PAGE DIGITAL EBOOK &middot; INSTANT ACCESS</div>
+    </div>
+
+    <div style="display:flex;justify-content:center;">
+      <div style="position:relative;width:min(340px,85vw);transform:rotate(-2deg);animation:floatSlow 6s ease-in-out infinite;">
+        <div style="position:absolute;inset:14px -14px -14px 14px;background:linear-gradient(160deg,rgba(0,163,255,0.25),rgba(147,51,234,0.25));border-radius:6px;filter:blur(2px);"></div>
+        <div style="position:relative;aspect-ratio:3/4.5;border-radius:5px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.55);border:1px solid rgba(148,163,184,0.25);">
+          <image-slot id="krishna-cover" shape="rect" src="uploads/ChatGPT Image Aug 31, 2026, 12_55_12 PM.png" placeholder="Drop the final Krishna cover artwork here (assets/krishna-cover.jpg)"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section data-screen-label="Problem" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:880px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;text-align:center;">
+    <h2 style="font-size:clamp(28px,4.2vw,42px);font-weight:700;line-height:1.15;margin:0 0 28px;text-wrap:pretty;">THE BATTLEFIELD HAS CHANGED.<br><span style="color:#00A3FF;">BUT THE FEELING HAS NOT.</span></h2>
+    <p style="font-size:17px;font-weight:300;color:#94A3B8;line-height:1.75;margin:0 0 20px;text-align:left;">Around five thousand years ago, a warrior named Arjuna stood frozen on a battlefield, unable to move. Every option in front of him had a real cost, and none of them felt clean. That conversation &mdash; between Arjuna and his charioteer, Krishna &mdash; is preserved in the eighteen chapters of the Bhagavad Gita.</p>
+    <p style="font-size:17px;font-weight:300;color:#94A3B8;line-height:1.75;margin:0 0 20px;text-align:left;">The battlefield looks different today. It might be a career decision you can't stop second-guessing. A relationship that no longer makes sense. A family expectation that feels impossible to meet. A comparison spiral that starts the moment you open Instagram. Or the quiet, exhausting feeling of not knowing what you're supposed to do with your life &mdash; while everyone else seems to have already figured it out.</p>
+    <p style="font-size:18px;font-weight:500;color:#F8FAFC;line-height:1.6;margin:0;">If any of that sounds familiar, this book was written with you in mind.</p>
+  </section>
+
+  <!-- BIG IDEA -->
+  <section data-screen-label="Big Idea" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:linear-gradient(180deg,rgba(107,33,168,0.1),rgba(0,163,255,0.04));border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:920px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+      <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.2;margin:0 0 28px;text-align:center;text-wrap:pretty;">AN ANCIENT CONVERSATION FOR A VERY MODERN PROBLEM.</h2>
+      <p style="font-size:17px;font-weight:300;color:#94A3B8;line-height:1.75;margin:0 0 20px;">This book is not a traditional commentary on the Bhagavad Gita. It does not attempt to replace the work of scholars, spiritual teachers, or the many translations that already exist.</p>
+      <p style="font-size:17px;font-weight:300;color:#94A3B8;line-height:1.75;margin:0 0 32px;">What it attempts is more modest and more personal: to ask what some of Krishna's core teachings might say to a person living in the modern world, facing the specific pressures, fears and confusions of contemporary life. The language is plain. The tone is direct. The intention is to be genuinely useful, not merely inspiring.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <sc-for list="{{ bigIdeaBadges }}" as="b" hint-placeholder-count="3">
+          <div style="text-align:center;background:rgba(248,250,252,0.04);border:1px solid rgba(148,163,184,0.18);border-radius:4px;padding:16px 24px;min-width:140px;">
+            <div style="font-size:22px;font-weight:700;color:#22D3EE;">{{ b.stat }}</div>
+            <div style="font-size:12px;font-weight:500;color:#94A3B8;letter-spacing:0.04em;margin-top:4px;">{{ b.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 QUESTIONS -->
+  <section data-screen-label="18 Questions" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-size:clamp(28px,4.2vw,42px);font-weight:700;line-height:1.15;margin:0 0 12px;">18 QUESTIONS.<br><span style="color:#9333EA;">18 WAYS TO LOOK AGAIN.</span></h2>
+      <p style="font-size:15px;font-weight:300;color:#94A3B8;max-width:560px;margin:0 auto;">One question and one Gita-inspired shift for each chapter. Original modern reflections &mdash; not direct scriptural quotations.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <sc-for list="{{ questions }}" as="item" hint-placeholder-count="18">
+        <div style="background:rgba(248,250,252,0.03);border:1px solid rgba(148,163,184,0.15);border-radius:4px;padding:24px;">
+          <div style="font-size:13px;font-weight:700;color:#00A3FF;letter-spacing:0.05em;margin-bottom:10px;">{{ item.n }}</div>
+          <div style="font-size:17px;font-weight:600;color:#F8FAFC;line-height:1.3;margin-bottom:12px;">{{ item.q }}</div>
+          <div style="font-size:14px;font-weight:300;color:#94A3B8;line-height:1.55;">{{ item.shift }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section data-screen-label="Whats Inside" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:rgba(0,163,255,0.03);border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:1000px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+      <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 40px;">MORE THAN JUST<br>SOMETHING TO READ.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
+        <sc-for list="{{ insideFeatures }}" as="f" hint-placeholder-count="5">
+          <div>
+            <div style="width:36px;height:2px;background:#C9A84C;margin-bottom:16px;"></div>
+            <div style="font-size:16px;font-weight:600;margin-bottom:8px;">{{ f.title }}</div>
+            <div style="font-size:14px;font-weight:300;color:#94A3B8;line-height:1.55;">{{ f.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section data-screen-label="How To Use" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 12px;">READ IT YOUR WAY.</h2>
+    <p style="font-size:15px;font-weight:300;color:#94A3B8;text-align:center;max-width:520px;margin:0 auto 44px;">There is no urgency here. Take it at the pace that serves you.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="border:1px solid rgba(148,163,184,0.18);border-radius:4px;padding:32px;">
+        <div style="font-size:13px;font-weight:700;color:#22D3EE;margin-bottom:14px;">01</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:12px;">Read It Straight Through</div>
+        <div style="font-size:14px;font-weight:300;color:#94A3B8;line-height:1.6;">The chapters stand alone, but together they build a coherent picture of how one ancient philosophy speaks to the full range of modern human difficulty.</div>
+      </div>
+      <div style="border:1px solid rgba(148,163,184,0.18);border-radius:4px;padding:32px;">
+        <div style="font-size:13px;font-weight:700;color:#22D3EE;margin-bottom:14px;">02</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:12px;">Open It When You Need It</div>
+        <div style="font-size:14px;font-weight:300;color:#94A3B8;line-height:1.6;">Dealing with fear, comparison, heartbreak, anger, confusion, or a decision you can't make right now? Go directly to the relevant chapter. Each one works on its own.</div>
+      </div>
+      <div style="border:1px solid rgba(148,163,184,0.18);border-radius:4px;padding:32px;">
+        <div style="font-size:13px;font-weight:700;color:#22D3EE;margin-bottom:14px;">03</div>
+        <div style="font-size:18px;font-weight:600;margin-bottom:12px;">Pause and Reflect</div>
+        <div style="font-size:14px;font-weight:300;color:#94A3B8;line-height:1.6;">Reflection prompts and a simple practical exercise appear at the end of each conversation. These are not homework. They are invitations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO FOR -->
+  <section data-screen-label="Who For" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:rgba(147,51,234,0.05);border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:820px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;text-align:center;">
+      <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.25;margin:0 0 28px;text-wrap:pretty;">FOR ANYONE FIGURING LIFE OUT, ONE QUESTION AT A TIME.</h2>
+      <p style="font-size:18px;font-weight:300;color:#F8FAFC;line-height:1.7;margin:0 0 32px;text-wrap:pretty;">For anyone who has ever felt confused about what to do next, afraid of making the wrong choice, exhausted by comparison, or simply searching for a little clarity &mdash; this book is for you.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <span style="font-size:13px;font-weight:500;color:#F8FAFC;border:1px solid rgba(148,163,184,0.25);border-radius:3px;padding:10px 18px;">No prior knowledge of the Gita required</span>
+        <span style="font-size:13px;font-weight:500;color:#F8FAFC;border:1px solid rgba(148,163,184,0.25);border-radius:3px;padding:10px 18px;">No prior knowledge of Indian philosophy required</span>
+        <span style="font-size:13px;font-weight:500;color:#F8FAFC;border:1px solid rgba(148,163,184,0.25);border-radius:3px;padding:10px 18px;">You don't need to be Hindu to find value here</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DIFFERENT -->
+  <section data-screen-label="Why Different" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:1000px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;line-height:1.25;margin:0 0 16px;text-wrap:pretty;">NOT A TRADITIONAL COMMENTARY.<br>NOT ANOTHER SELF-HELP BOOK.</h2>
+    <p style="font-size:15px;font-weight:300;color:#94A3B8;text-align:center;max-width:600px;margin:0 auto 44px;">Traditional translations and commentaries are valuable and respected. This book offers a modern entry point &mdash; it doesn't try to replace them.</p>
+    <div style="border:1px solid rgba(148,163,184,0.18);border-radius:4px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:16px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#94A3B8;border-bottom:1px solid rgba(148,163,184,0.18);">TRADITIONAL APPROACH</div>
+        <div style="padding:16px 24px;font-size:12px;font-weight:600;letter-spacing:0.08em;color:#C9A84C;border-bottom:1px solid rgba(148,163,184,0.18);border-left:1px solid rgba(148,163,184,0.18);">THIS BOOK</div>
+      </div>
+      <sc-for list="{{ comparisonRows }}" as="row" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:20px 24px;font-size:14px;font-weight:300;color:#94A3B8;line-height:1.5;border-bottom:1px solid rgba(148,163,184,0.1);">{{ row.trad }}</div>
+          <div style="padding:20px 24px;font-size:14px;font-weight:400;color:#F8FAFC;line-height:1.5;border-bottom:1px solid rgba(148,163,184,0.1);border-left:1px solid rgba(148,163,184,0.18);">{{ row.book }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- REAL BOOK PREVIEWS -->
+  <section data-screen-label="Book Previews" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:rgba(0,163,255,0.03);border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+      <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 12px;">INSIDE THE BOOK.</h2>
+      <p style="font-size:14px;font-family:monospace;color:#94A3B8;text-align:center;max-width:600px;margin:0 auto 44px;">/* dev note: replace each slot below with a real screenshot of that page &mdash; assets/preview-01.jpg through preview-06.jpg */</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <sc-for list="{{ previewCards }}" as="p" hint-placeholder-count="6">
+          <div>
+            <div style="aspect-ratio:3/4;border-radius:4px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.4);border:1px solid rgba(148,163,184,0.2);margin-bottom:14px;">
+              <image-slot id="{{ p.id }}" shape="rect" placeholder="{{ p.placeholder }}"></image-slot>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:#F8FAFC;">{{ p.label }}</div>
+            <div style="font-size:12px;font-weight:300;color:#94A3B8;">{{ p.caption }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL FIND -->
+  <section data-screen-label="What Youll Find" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 44px;">WHAT YOU WILL FIND INSIDE.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <sc-for list="{{ insideCategories }}" as="c" hint-placeholder-count="7">
+        <div style="background:rgba(248,250,252,0.03);border:1px solid rgba(148,163,184,0.15);border-radius:4px;padding:24px;">
+          <div style="font-size:15px;font-weight:700;color:#00A3FF;margin-bottom:10px;letter-spacing:0.03em;">{{ c.title }}</div>
+          <div style="font-size:13px;font-weight:300;color:#94A3B8;line-height:1.5;">{{ c.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="font-size:13px;font-weight:300;color:#94A3B8;text-align:center;margin:32px auto 0;max-width:600px;">These are areas the book explores &mdash; not a promise that the book will resolve them for you.</p>
+  </section>
+
+  <!-- PRACTICAL SIDE -->
+  <section data-screen-label="Practical Side" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:rgba(147,51,234,0.05);border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+      <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 12px;">DON'T JUST READ IT.<br><span style="color:#C9A84C;">PAUSE WITH IT.</span></h2>
+      <p style="font-size:15px;font-weight:300;color:#94A3B8;text-align:center;max-width:560px;margin:0 auto 44px;">A sample of the reflective exercises inside. These are invitations to reflect, not homework.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+        <sc-for list="{{ exercises }}" as="ex" hint-placeholder-count="6">
+          <div style="border:1px solid rgba(148,163,184,0.18);border-radius:4px;padding:26px;">
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#C9A84C;margin-bottom:10px;">CHAPTER {{ ex.ch }}</div>
+            <div style="font-size:16px;font-weight:600;margin-bottom:10px;">{{ ex.name }}</div>
+            <div style="font-size:13px;font-weight:300;color:#94A3B8;line-height:1.55;">{{ ex.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section data-screen-label="Journey" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:820px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 12px;">THE QUESTION CHANGES.</h2>
+    <p style="font-size:15px;font-weight:300;color:#94A3B8;text-align:center;max-width:560px;margin:0 auto 48px;">One of the quieter progressions of this book is what happens to the reader's central question as the chapters unfold.</p>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <sc-for list="{{ journeySteps }}" as="item" hint-placeholder-count="6">
+        <div style="display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(148,163,184,0.12);">
+          <div style="font-size:13px;font-weight:700;color:#22D3EE;min-width:24px;">{{ item.num }}</div>
+          <div style="font-size:17px;font-weight:400;color:#F8FAFC;line-height:1.4;font-style:italic;">&ldquo;{{ item.text }}&rdquo;</div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="font-size:16px;font-weight:400;color:#F8FAFC;text-align:center;line-height:1.6;margin:44px 0 0;text-wrap:pretty;">Not from confusion to certainty. From confusion to a deeper, more honest engagement with the questions themselves.</p>
+    <p style="font-size:20px;font-weight:600;color:#C9A84C;text-align:center;line-height:1.5;margin:24px 0 0;text-wrap:pretty;">Wisdom does not remove uncertainty. It changes how you stand inside it.</p>
+  </section>
+
+  <!-- OFFER -->
+  <section data-screen-label="Offer" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:linear-gradient(160deg,rgba(0,163,255,0.08),rgba(147,51,234,0.1));border-top:1px solid rgba(148,163,184,0.12);border-bottom:1px solid rgba(148,163,184,0.12);">
+    <div style="max-width:900px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;align-items:center;">
+      <div style="display:flex;justify-content:center;">
+        <div style="width:min(200px,60vw);aspect-ratio:3/4.5;border-radius:5px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);border:1px solid rgba(148,163,184,0.25);">
+          <image-slot id="krishna-cover-offer" shape="rect" src="uploads/ChatGPT Image Aug 31, 2026, 12_55_12 PM.png" placeholder="Same cover asset"></image-slot>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#00A3FF;margin-bottom:14px;">YOUR COPY OF</div>
+        <h2 style="font-size:clamp(26px,3.6vw,36px);font-weight:700;line-height:1.15;margin:0 0 18px;">WHAT WOULD<br>KRISHNA SAY?</h2>
+        <div style="font-size:14px;font-weight:500;color:#94A3B8;letter-spacing:0.04em;margin-bottom:20px;">217-PAGE DIGITAL EBOOK</div>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px;">
+          <span style="font-size:18px;color:#94A3B8;text-decoration:line-through;">&#8377;399</span>
+          <span style="font-size:38px;font-weight:700;color:#C9A84C;">&#8377;199</span>
+        </div>
+        <span style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.08em;color:#9333EA;background:rgba(147,51,234,0.12);border:1px solid rgba(147,51,234,0.3);border-radius:3px;padding:6px 12px;margin-bottom:24px;">{{ offerLabel }}</span>
+        <div>
+          <a href="{{ payuUrl }}" style="display:inline-block;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#0A0F1E;background:linear-gradient(90deg,#00A3FF,#9333EA);padding:18px 36px;border-radius:4px;">{{ ctaText }}</a>
+        </div>
+        <div style="font-size:12px;font-weight:500;letter-spacing:0.05em;color:#94A3B8;margin-top:14px;">INSTANT DIGITAL ACCESS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section data-screen-label="FAQ" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);max-width:820px;margin:0 auto;padding:clamp(56px,9vw,100px) 24px;">
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:700;text-align:center;margin:0 0 44px;">QUESTIONS.</h2>
+    <div>
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+        <div style="border-bottom:1px solid rgba(148,163,184,0.15);">
+          <button onClick="{{ f.toggle }}" style="all:unset;display:flex;width:100%;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;cursor:pointer;font-family:'Poppins',sans-serif;" style-focus="outline:2px solid #00A3FF;outline-offset:2px;">
+            <span style="font-size:16px;font-weight:500;color:#F8FAFC;text-align:left;">{{ f.q }}</span>
+            <span style="font-size:20px;font-weight:300;color:#00A3FF;flex-shrink:0;">{{ f.icon }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 4px 22px;font-size:14px;font-weight:300;color:#94A3B8;line-height:1.65;max-width:680px;">{{ f.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section data-screen-label="Final CTA" data-reveal="1" style="transform:translateY(20px);transition:transform .7s cubic-bezier(.2,.8,.2,1);background:linear-gradient(180deg,rgba(10,15,30,0),rgba(0,163,255,0.06));border-top:1px solid rgba(148,163,184,0.12);text-align:center;">
+    <div style="max-width:700px;margin:0 auto;padding:clamp(64px,10vw,120px) 24px;">
+      <h2 style="font-size:clamp(30px,5vw,48px);font-weight:700;line-height:1.15;margin:0 0 18px;text-wrap:pretty;">YOU DON'T NEED<br>ALL THE ANSWERS.</h2>
+      <p style="font-size:17px;font-weight:300;color:#94A3B8;line-height:1.6;margin:0 0 36px;">Sometimes you need a better way to ask the questions.</p>
+      <a href="{{ payuUrl }}" style="display:inline-block;font-family:'Poppins',sans-serif;font-weight:600;font-size:17px;color:#0A0F1E;background:linear-gradient(90deg,#00A3FF,#9333EA);padding:20px 44px;border-radius:4px;box-shadow:0 12px 32px rgba(0,163,255,0.25);">{{ ctaText }}</a>
+      <div style="margin-top:20px;font-size:12px;font-weight:500;letter-spacing:0.05em;color:#94A3B8;">{{ offerLabel }} &middot; &#8377;399 &rarr; &#8377;199 &middot; INSTANT DIGITAL ACCESS</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(148,163,184,0.15);padding:48px 24px 40px;">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;">
+      <div style="max-width:400px;">
+        <div style="font-size:15px;font-weight:700;letter-spacing:0.04em;margin-bottom:8px;">WHAT WOULD KRISHNA SAY?</div>
+        <div style="font-size:13px;font-weight:300;color:#94A3B8;margin-bottom:16px;">18 Conversations from the Bhagavad Gita for Modern Life</div>
+        <div style="font-size:12px;font-weight:500;letter-spacing:0.05em;color:#94A3B8;">CONTENT COTTAGE</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+        <a href="{{ privacyUrl }}">Privacy Policy</a>
+        <a href="{{ termsUrl }}">Terms</a>
+        <a href="{{ contactUrl }}">Contact</a>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:32px auto 0;font-size:12px;font-weight:300;color:#94A3B8;">&copy; 2026 Content Cottage. All rights reserved.</div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <sc-if value="{{ showStickyCta }}" hint-placeholder-val="{{ true }}">
+    <div style="{{ stickyBarStyle }}">
+      <div style="max-width:1180px;margin:0 auto;padding:14px 20px calc(14px + env(safe-area-inset-bottom, 0px));display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <div style="display:flex;flex-direction:column;min-width:0;">
+          <span style="font-size:13px;font-weight:600;color:#F8FAFC;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">WHAT WOULD KRISHNA SAY?</span>
+          <span style="font-size:12px;font-weight:500;color:#C9A84C;">&#8377;199</span>
+        </div>
+        <a href="{{ payuUrl }}" style="flex-shrink:0;font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;color:#0A0F1E;background:linear-gradient(90deg,#00A3FF,#9333EA);padding:12px 22px;border-radius:4px;white-space:nowrap;">{{ ctaText }}</a>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;offerLabel&quot;: {&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;KRISHNA JANMASHTAMI SPECIAL&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Offer&quot;},
+  &quot;ctaText&quot;: {&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;GET THE EBOOK — ₹199&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Offer&quot;},
+  &quot;showStickyCta&quot;: {&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}
+}">
+// ============================================================
+// CONFIGURATION — edit these before deploying
+// ============================================================
+const PAYU_PAYMENT_URL = "https://u.payu.in/PAYUMN/trNLgARukpDT"; // every CTA on the page reads from this one constant
+const PRIVACY_URL = "#";
+const TERMS_URL = "#";
+const CONTACT_URL = "#";
+// The final Krishna cover art and page-preview screenshots are dropped directly onto the
+// <image-slot> elements in the template (drag a file, or click to browse) and persist
+// automatically. For a production GitHub Pages deploy, place the real files under assets/
+// (e.g. assets/krishna-cover.jpg) and set that image-slot's `src` attribute to it.
+
+const EIGHTEEN_QUESTIONS = [
+  {n:"01", q:"I'm Lost. What Do I Do Now?", shift:"Look honestly at what is in front of you. Identify the next responsible action available to you today."},
+  {n:"02", q:"Why Am I So Afraid of Failure?", shift:"Fear may remain. You do not have to make fear the decision-maker."},
+  {n:"03", q:"What If Everyone Is Ahead of Me?", shift:"Their path was built for their circumstances. Ask what is appropriate for yours."},
+  {n:"04", q:"How Do I Stop Overthinking?", shift:"You cannot stop the mind by force. But you can return your attention to what is actually here."},
+  {n:"05", q:"Why Can't I Let Go?", shift:"Letting go is not forgetting. It is allowing reality to be what it is without requiring it to be different."},
+  {n:"06", q:"What If I Choose Wrong?", shift:"There is rarely one perfect choice. There is usually a more honest one and a less honest one."},
+  {n:"07", q:"Why Do I Need Everyone's Approval?", shift:"Other people's opinions can inform you. They do not have to define you."},
+  {n:"08", q:"How Do I Deal With Anger?", shift:"Anger is information. It does not have to become your next action."},
+  {n:"09", q:"Why Does Success Still Feel Empty?", shift:"Success changes circumstances, not identity. The question underneath success is worth asking."},
+  {n:"10", q:"What Is My Purpose?", shift:"You do not need to know the entire road. You need enough clarity to take the next honest step."},
+  {n:"11", q:"How Do I Stay Calm When Life Is Chaotic?", shift:"You cannot make life completely predictable. You can practice meeting it with greater steadiness."},
+  {n:"12", q:"Why Am I So Attached to Results?", shift:"You have authority over the quality of your effort. The outcome is shaped by more than effort alone."},
+  {n:"13", q:"How Do I Deal With Heartbreak?", shift:"The pain is real. It is not the permanent shape of your life."},
+  {n:"14", q:"What If I Don't Feel Motivated?", shift:"You do not need to feel ready to begin. Beginning is often how readiness is built."},
+  {n:"15", q:"How Do I Stop Comparing Myself?", shift:"Their success does not subtract from yours. Your path does not need to look like theirs."},
+  {n:"16", q:"What Does It Mean to Truly Know Myself?", shift:"More than knowing your preferences. Becoming curious about who is experiencing all the changing versions."},
+  {n:"17", q:"How Do I Find Inner Peace?", shift:"The practice is not never wandering. The practice is returning."},
+  {n:"18", q:"What Would Krishna Say Today?", shift:"Act with sincerity. Care without clinging. Know yourself a little more. Return when you wander."},
+];
+
+const INSIDE_FEATURES = [
+  {title:"18 Conversations", desc:"Each chapter takes one central question and brings a relevant Gita teaching into conversation with it."},
+  {title:"Gita Teachings", desc:"Sanskrit verses, transliterations, and original plain-English renderings created for this book."},
+  {title:"Modern Interpretation", desc:"Plain, direct language aimed at being genuinely useful, not merely inspiring."},
+  {title:"Reflection Prompts & Exercises", desc:"Every conversation ends with reflection prompts and a simple practical exercise."},
+  {title:"Final Synthesis", desc:"A closing chapter that draws the eighteen conversations into one final teaching."},
+];
+
+const INSIDE_CATEGORIES = [
+  {title:"Clarity", desc:"When you don't know what to do next."},
+  {title:"Courage", desc:"When fear of failure is holding you back."},
+  {title:"Perspective", desc:"When everyone seems ahead of you."},
+  {title:"Detachment", desc:"When you can't let go, or you're attached to results."},
+  {title:"Self-Knowledge", desc:"When you're questioning who you really are."},
+  {title:"Steadiness", desc:"When life feels chaotic."},
+  {title:"Inner Peace", desc:"When your mind will not stop wandering."},
+];
+
+const EXERCISES = [
+  {ch:"01", name:"The Arjuna Pause", desc:"Five to ten minutes, alone: what decision is making you feel stuck, and what's fact versus fear inside it?"},
+  {ch:"02", name:"The Failure Reframe", desc:"A short reflective exercise on separating fear from the decision itself."},
+  {ch:"07", name:"The Approval Check", desc:"Take one decision where you're seeking approval and work through it honestly."},
+  {ch:"08", name:"The Anger Audit", desc:"A short exercise for treating anger as information rather than an instruction."},
+  {ch:"15", name:"The Comparison Audit", desc:"Choose one comparison that visits you regularly and work through it honestly."},
+  {ch:"17", name:"The Three-Breath Return", desc:"A simple grounding practice for when the mind has run ahead of the present moment."},
+];
+
+const COMPARISON_ROWS = [
+  {trad:"Written for readers already familiar with the text", book:"Written for readers who may never have opened the Gita before"},
+  {trad:"Aims to be a scholarly or literal translation", book:"Aims to be a modern, plain-language conversation"},
+  {trad:"Assumes prior context and Sanskrit terms", book:"Needs no prior knowledge of the Gita or Indian philosophy"},
+  {trad:"A valuable and respected tradition of its own", book:"A modern entry point that can sit alongside it"},
+];
+
+const PREVIEW_CARDS = [
+  {id:"preview-01", label:"The Moment", caption:"Ch. 01 — the scene at Kurukshetra", placeholder:"assets/preview-01.jpg — chapter opener"},
+  {id:"preview-02", label:"The Modern Question", caption:"Ch. 02 — Why Am I So Afraid of Failure?", placeholder:"assets/preview-02.jpg — modern question spread"},
+  {id:"preview-03", label:"The Gita Teaching", caption:"Sanskrit verse, transliteration & original rendering", placeholder:"assets/preview-03.jpg — teaching spread"},
+  {id:"preview-04", label:"Reflection Exercise", caption:"Ch. 07 — The Approval Check", placeholder:"assets/preview-04.jpg — try this spread"},
+  {id:"preview-05", label:"18 Questions", caption:"18 Questions — 18 Ways to Look Again", placeholder:"assets/preview-05.jpg — questions spread"},
+  {id:"preview-06", label:"Final Synthesis", caption:"Ch. 18 — What Would Krishna Say Today?", placeholder:"assets/preview-06.jpg — closing chapter"},
+];
+
+const JOURNEY_STEPS = [
+  "How do I get what I want?",
+  "What is worth wanting?",
+  "What is mine to do?",
+  "How should I act, and with what relationship to results?",
+  "Who am I beneath all these changing circumstances?",
+  "How can I remain steady enough to engage with life honestly?",
+];
+
+const BIG_IDEA_BADGES = [
+  {stat:"217", label:"PAGES"},
+  {stat:"18", label:"CONVERSATIONS"},
+  {stat:"1st", label:"EDITION"},
+];
+
+const HERO_THEMES = ["Fear of failure", "Feeling lost", "Comparison", "Overthinking", "Heartbreak"];
+
+const FAQ_DATA = [
+  {q:"Is this a traditional translation of the Bhagavad Gita?", a:"No. This book explicitly describes itself as not a traditional commentary. It's a modern interpretation that brings selected Gita teachings into conversation with contemporary questions."},
+  {q:"Do I need to know the Bhagavad Gita already?", a:"No. Prior knowledge of the Gita or Indian philosophy is not required."},
+  {q:"Who is this book for?", a:"Anyone who has felt confused about what to do next, afraid of making the wrong choice, exhausted by comparison, or simply searching for a little clarity."},
+  {q:"How long is the ebook?", a:"217 pages."},
+  {q:"How do I receive it?", a:"Instant digital access after successful payment."},
+  {q:"What format is it, and can I read it on my phone?", a:"It's a digital PDF ebook, designed to be read comfortably on a phone, tablet, or computer."},
+  {q:"Is this a religious book?", a:"It draws on the Bhagavad Gita and Krishna's teachings and presents them as a modern reflective interpretation. It does not claim to be an official publication of any religious organisation, and it doesn't assume your religion or beliefs."},
+  {q:"Does the book guarantee that life will become easier?", a:"No. The book is direct about this: it doesn't promise that life will become smooth or that outcomes will always work out. What it offers is a way of relating differently to uncertainty."},
+];
+
+class Component extends DCLogic {
+  state = { openFaq: -1, scrolled: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const scrolled = window.scrollY > window.innerHeight * 0.7;
+      if (scrolled !== this.state.scrolled) this.setState({ scrolled });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (reduced) {
+      targets.forEach(el => { el.style.transition = 'none'; el.style.transform = 'none'; });
+    } else {
+      this._observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.transform = 'none';
+            this._observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      targets.forEach(el => this._observer.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._observer) this._observer.disconnect();
+  }
+
+  toggleFaq = (i) => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i }));
+
+  renderVals() {
+    const showStickyCta = this.props.showStickyCta ?? true;
+    const offerLabel = this.props.offerLabel ?? "KRISHNA JANMASHTAMI SPECIAL";
+    const ctaText = this.props.ctaText ?? "GET THE EBOOK — ₹199";
+    const scrolled = this.state.scrolled;
+
+    return {
+      payuUrl: PAYU_PAYMENT_URL,
+      privacyUrl: PRIVACY_URL,
+      termsUrl: TERMS_URL,
+      contactUrl: CONTACT_URL,
+      offerLabel,
+      ctaText,
+      heroThemes: HERO_THEMES,
+      bigIdeaBadges: BIG_IDEA_BADGES,
+      questions: EIGHTEEN_QUESTIONS,
+      insideFeatures: INSIDE_FEATURES,
+      insideCategories: INSIDE_CATEGORIES,
+      exercises: EXERCISES,
+      comparisonRows: COMPARISON_ROWS,
+      previewCards: PREVIEW_CARDS,
+      journeySteps: JOURNEY_STEPS.map((text, i) => ({ text, num: String(i + 1).padStart(2, '0') })),
+      bottomPad: showStickyCta ? 76 : 0,
+      faqs: FAQ_DATA.map((f, i) => ({ ...f, open: this.state.openFaq === i, icon: this.state.openFaq === i ? '\u2212' : '+', toggle: () => this.toggleFaq(i) })),
+      showStickyCta,
+      stickyBarStyle: `position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,15,30,0.96);backdrop-filter:blur(10px);border-top:1px solid rgba(148,163,184,0.2);box-shadow:0 -8px 24px rgba(0,0,0,0.35);transform:translateY(${scrolled ? '0' : '100%'});transition:transform .35s ease;`,
+    };
+  }
+}
+
+</script>
+<template id="__bundler_thumbnail" data-bg-color="#0A0F1E">
+  <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#0A0F1E"/>
+    <rect x="80" y="80" width="280" height="420" rx="6" fill="none" stroke="#6B21A8" stroke-width="2" opacity="0.6"/>
+    <rect x="90" y="90" width="260" height="400" rx="4" fill="rgba(107,33,168,0.15)"/>
+    <text x="220" y="270" font-family="sans-serif" font-size="18" font-weight="700" fill="#00A3FF" text-anchor="middle">WHAT WOULD</text>
+    <text x="220" y="296" font-family="sans-serif" font-size="18" font-weight="700" fill="#9333EA" text-anchor="middle">KRISHNA SAY?</text>
+    <rect x="440" y="100" width="280" height="36" rx="3" fill="rgba(0,163,255,0.1)"/>
+    <rect x="440" y="148" width="200" height="12" rx="2" fill="rgba(148,163,184,0.3)"/>
+    <rect x="440" y="168" width="240" height="12" rx="2" fill="rgba(148,163,184,0.2)"/>
+    <rect x="440" y="188" width="220" height="12" rx="2" fill="rgba(148,163,184,0.2)"/>
+    <rect x="440" y="228" width="200" height="44" rx="4" fill="rgba(0,163,255,0.6)"/>
+    <text x="540" y="256" font-family="sans-serif" font-size="13" font-weight="700" fill="#0A0F1E" text-anchor="middle">GET THE EBOOK</text>
+    <line x1="80" y1="540" x2="720" y2="540" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>
+    <text x="400" y="570" font-family="sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">CONTENT COTTAGE</text>
+  </svg>
+</template>
+</body>
+</html>
